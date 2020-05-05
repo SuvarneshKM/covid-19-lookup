@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-4">Covid-19 lookup!</h1>
+  <p class="lead">Covid-19 details all over Kerala!</p>
+</div>
+<br/>
+
+
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead>
+    <tr>
+      <th scope="col">District </th>
+      <th scope="col">Active </th>   
+      <th scope="col">TotalConfirmed </th>
+      <th scope="col">TotalRecovered </th>
+      <th scope="col">TotalDeaths </th>
+
+    </tr>
+  </thead>
+  <tbody>
+{% for value in api_kl %}
+
+    <tr>
+        <td>{{ value.district }}</td>
+        <td>{{ value.active }}</td>
+        <td>{{ value.confirmed }}</td>
+        <td>{{ value.recovered }}</td>
+        <td>{{ value.deceased }}</td>
+{% endfor %}
+
+
+  </tbody>
+</table>  
+
+{% endblock %}

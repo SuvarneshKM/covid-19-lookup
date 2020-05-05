@@ -7,36 +7,57 @@
   <p class="lead">Covid-19 details all over India!</p>
 </div>
 <br/>
-
-<!-- 
+<!-- the api is tricky -->
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead>
+    <tr>
+      <th scope="col">India </th>   
+      <th scope="col">TotalConfirmed </th>
+      <th scope="col">TotalRecovered </th>
+      <th scope="col">TotalDeaths </th>
+    </tr>
+  </thead>
+  <tbody>
+{% for value in covid_ind %}    
+    
+    {% if value.id == 33 %}
+      <tr>
+          <td>Total number</td>
+          <td>{{ value.name }}</td>
+          <td>{{ value.confirmed }}</td>
+          <td>{{ value.recovered }}</td>
+    {% endif %}
+{% endfor %}  
+    </tbody>
+  </table> 
 <table class="table table-striped table-bordered table-hover table-sm">
   <thead>
     <tr>
       <th scope="col">S. No. </th>
       <th scope="col">State </th>
-      <th scope="col">Confirmed Indian </th>   
-      <th scope="col">Confirmed Foreign </th>
-      <th scope="col">Cured </th>
-      <th scope="col">Deaths </th>
-
+      <th scope="col">Active </th>   
+      <th scope="col">TotalConfirmed </th>
+      <th scope="col">TotalRecovered </th>
+      <th scope="col">TotalDeaths </th>
     </tr>
   </thead>
   <tbody>
 {% for value in covid_ind %}
-
   
+  {% if value.id <= 32 %}
     <tr>
-      <td>{{ key }}</td>
-      <td>{{ value.id }}</td>
-      <td>{{ value.place }}</td>
-      <td>{{ value.confirmed_indian }}</td>
-      <td>{{ value.confirmed_foreign }}</td>
-      <td>{{ value.cured }}</td>
-      <td>{{ value.deaths }}</td>
+        <td>{{ value.id }}</td>
+        <td>{{ value.name }}</td>
+        <td>{{ value.active }}</td>
+        <td>{{ value.confirmed }}</td>
+        <td>{{ value.recovered }}</td>
+        <td>{{ value.deaths }}</td>
+  {% endif %}
 
 {% endfor %}
 
   </tbody>
-</table>  -->
+</table> 
+
 
 {% endblock %}
