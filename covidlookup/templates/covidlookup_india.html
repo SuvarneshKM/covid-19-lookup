@@ -7,29 +7,7 @@
   <p class="lead">Covid-19 details all over India!</p>
 </div>
 <br/>
-<!-- the api is tricky -->
-<table class="table table-striped table-bordered table-hover table-sm">
-  <thead>
-    <tr>
-      <th scope="col">India </th>   
-      <th scope="col">TotalConfirmed </th>
-      <th scope="col">TotalRecovered </th>
-      <th scope="col">TotalDeaths </th>
-    </tr>
-  </thead>
-  <tbody>
-{% for value in covid_ind %}    
-    
-    {% if value.id == 33 %}
-      <tr>
-          <td>Total number</td>
-          <td>{{ value.name }}</td>
-          <td>{{ value.confirmed }}</td>
-          <td>{{ value.recovered }}</td>
-    {% endif %}
-{% endfor %}  
-    </tbody>
-  </table> 
+<!-- the api is tricky --> 
 <table class="table table-striped table-bordered table-hover table-sm">
   <thead>
     <tr>
@@ -44,7 +22,7 @@
   <tbody>
 {% for value in covid_ind %}
   
-  {% if value.id <= 32 %}
+  {% if value.id <= 33 %}
     <tr>
         <td>{{ value.id }}</td>
         <td>{{ value.name }}</td>
